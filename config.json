@@ -1,0 +1,6 @@
+{
+port: "80",
+timeLimit: 2000,
+maxRequests: 1,
+errorMessage: "Ratelimit Reached! Error."
+}
