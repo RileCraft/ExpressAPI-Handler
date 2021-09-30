@@ -1,5 +1,6 @@
 const config = require(rootPATH + "/config.json")
 const express = require("express")
+const chalk = require('chalk')
 const router = express.Router()
 const server = express()
 server.set('json spaces', 2) // JSON Formatting.
@@ -13,17 +14,17 @@ class expressHandler {
         FileManager (apiPATH, function (err, ah) {
   ah.forEach(file => {
   	if (fs.statSync(file).isDirectory() && !file.endsWith(".js")) return;
-  const ep = require(file)
-  if (!ep.noRateLimit) {
-  	const limiter = rateLimit({
-  windowMs: config.rateLimit, // in ms
-  max: config.maxRequests, // Max requests allowed during the time in windowMS
-  message: config.errorMessage // Error message when ratelimit reached.
-   })
-   server.use(ep.url, limiter)
+  const API = require(file)
+  if (!API.noRateLimit) {
+const limiter = rateLimit({
+windowMs: config.rateLimit, 
+max: config.maxRequests, 
+message: config.errorMessage 
+   }) // Limiter End
+server.use(API.url, limiter)
   	} // if End
-  	server.get(ep.url, (req, res) => {
-ep.run(req, res)
+  	server.get(API.url, (req, res) => {
+API.run(req, res)
   	}) // server.get end
   }) // ah.forEach() End
 }) // FileManager End 
