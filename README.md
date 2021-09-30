@@ -20,11 +20,11 @@ Edit the `config.json` file and fill the contents of it.
 # Format of Endpoints
 ```js
 module.exports = {
-	name: "Meme", // Name of the API. Not really needed but you can keep it.
-	url: "/fun/meme", // The url at which the API will be accessable. Eg: https://localhost/fun/meme
-	run: async(req, res) => {
+name: "Meme", // Name of the API. Not really needed but you can keep it.
+url: "/fun/meme", // The url at which the API will be accessable. Eg: https://localhost/fun/meme
+run: async(req, res) => {
 
-	hdbdbdbdbhd // Enter your code.
+hdbdbdbdbhd // Enter your code.
 	
 	}
 	     } 
