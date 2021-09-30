@@ -16,7 +16,7 @@ class expressHandler {
   const ep = require(file)
   if (!ep.noRateLimit) {
   	const limiter = rateLimit({
-  windowMs: config.timeLimit, // in ms
+  windowMs: config.rateLimit, // in ms
   max: config.maxRequests, // Max requests allowed during the time in windowMS
   message: config.errorMessage // Error message when ratelimit reached.
    })
