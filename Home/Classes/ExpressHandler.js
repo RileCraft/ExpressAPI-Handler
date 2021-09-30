@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const router = express.Router()
 const server = express()
 server.set('json spaces', 2) // JSON Formatting.
-server.listen(config.port, () => console.log(chalk.bold.cyan("[BackEnd] ") + chalk.bold.magentaBright("API has been initiated on port" + config.port)) ) 
+server.listen(config.port, () => console.log(chalk.bold.cyan("[BackEnd] ") + chalk.bold.magentaBright("API has been initiated on port " + config.port)) ) 
 const rateLimit = require("express-rate-limit")
 const { FileManager } = require(rootPATH + "/Home/Functions/FileManager")
 const fs = require('fs')
