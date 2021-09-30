@@ -1,6 +1,6 @@
 {
-port: "80",
-rateLimit: 2000,
-maxRequests: 1,
-errorMessage: "Ratelimit Reached! Error."
+   "port": 80,
+   "rateLimit": 2000,
+   "maxRequests": 1,
+   "errorMessage": "Ratelimit Reached! Error."
 }
